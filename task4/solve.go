@@ -1,7 +1,7 @@
 package main
 
 //import "fmt"
-import "unicode"
+import 	"unicode"
 
 
 /*Релизовать функцию, которая принимает на вход slice из чисел и возвращает slice в котором удалены все четные числа. Имя функции: RemoveEven
@@ -57,6 +57,10 @@ func DifferentWordsCount(str string) int {
 			words[word]++
 			word = ""
 		}
+	}
+	if word != "" {
+		words[word]++
+		word = ""
 	}
 	return len(words)
 }
