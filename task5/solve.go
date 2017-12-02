@@ -35,7 +35,6 @@ func reduceUrl (w http.ResponseWriter, r *http.Request) {
 		panic(erro)
 	}
 	w.Write(response)
-
 }
 
 func getUrl (w http.ResponseWriter, r *http.Request) {
@@ -47,7 +46,7 @@ func getUrl (w http.ResponseWriter, r *http.Request) {
 
 func main () {
 	router := mux.NewRouter()
-	router.HandleFunc("/", reduceUrl)
 	router.HandleFunc("/{key}", getUrl)
+	router.HandleFunc("/", reduceUrl)
 	http.ListenAndServe(":8082", nil)
 }
